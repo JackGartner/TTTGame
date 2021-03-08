@@ -18,6 +18,7 @@ is also available for use
 REQUIREMENTS
 
 -There are no requirements to run this module
+-No packages are needed to be installed
 
 EXECUTION
 
