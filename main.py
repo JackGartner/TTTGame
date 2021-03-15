@@ -41,9 +41,9 @@ def main():
   prompt = "Enter a value between 1 and 9 (" + str(SENTINEL) + " to quit): "
   
   a = [
-    0, 0, 0, 
-    0, 0, 0,
-    0, 0, 0
+    "0", "0", "0", 
+    "0", "0", "0",
+    "0", "0", "0"
   ]
   
   
