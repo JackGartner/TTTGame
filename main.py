@@ -38,7 +38,7 @@ def main():
   val = 0
   # game variables
   gameInPlay = True
-  prompt = "Enter a value between 0 and 8 (" + str(SENTINEL) + " to quit): "
+  prompt = "Enter a value between 1 and 9 (" + str(SENTINEL) + " to quit): "
   
   a = [
     0, 0, 0, 
@@ -65,15 +65,15 @@ def main():
     # user wants to exit     
     if userInput == SENTINEL:
       break
-    elif not (userInput > -1 and userInput < 9):
+    elif not (userInput > 0 and userInput < 10):
       print("invalid input " + str(userInput))
     else:
       print("processing move")
       
       if numTurns % 2 == 1:
-        a[userInput] = 1
+        a[userInput - 1] = "x"
       else:
-        a[userInput] = -1
+        a[userInput - 1] = "o"
 
       if gameFunctions.isThereAWinInAnyRow(a) == True:
         print("there is a winner in a row")
@@ -91,7 +91,9 @@ def main():
         print("Invalid Game State")
         break
       else:
-        print(a)
+        print(a[:3])
+        print(a[3:6])
+        print(a[6:])       
         print("there is not a winner")
 
 
