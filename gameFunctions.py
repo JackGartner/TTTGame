@@ -1,8 +1,8 @@
 
 # Global Variables
-P1 = 1    # token for player 1
-P2 = -1   # token for player 2
-BL = 0    # token for BL/blank space
+P1 = "x"   # token for player 1
+P2 = "o"   # token for player 2
+BL = "0"    # token for BL/blank space
 
 
 def isThereAWinInAnyRow(a):
