@@ -9,6 +9,13 @@ import ioFunctions
 
 ##### global constants
 
+#dumb = [3, 4, 66, 77, -9, 99, 88, 22]
+
+#print(dumb[-4:-1])
+#quit()
+
+
+
 
 ##### global variables
 
@@ -40,11 +47,7 @@ def main():
   gameInPlay = True
   prompt = "Enter a value between 1 and 9 (" + str(SENTINEL) + " to quit): "
   
-  a = [
-    "0", "0", "0", 
-    "0", "0", "0",
-    "0", "0", "0"
-  ]
+  a = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   
   
   while gameInPlay:
@@ -71,29 +74,31 @@ def main():
       print("processing move")
       
       if numTurns % 2 == 1:
-        a[userInput - 1] = "x"
+        a[userInput - 1] = 1
       else:
-        a[userInput - 1] = "o"
+        a[userInput - 1] = -1
 
       if gameFunctions.isThereAWinInAnyRow(a) == True:
-        print("there is a winner in a row")
+        print(a)
+        print("there is a winner in a row")       
         break
       if gameFunctions.isThereAWinInAnyColumn(a) == True:
+        print(a)
         print("there is a winner in a column")
         break
       if gameFunctions.isThereAWinInAnyDiagonal(a) == True:
+        print(a)
         print("there is a winner in a diagonal")
         break
       if gameFunctions.isThereADraw(a) == True:
+        print(a)
         print("there is a Draw")
         break
       if gameFunctions.isValidGameState(a) == False:
         print("Invalid Game State")
         break
       else:
-        print(a[:3])
-        print(a[3:6])
-        print(a[6:])       
+        print(a)
         print("there is not a winner")
 
 
