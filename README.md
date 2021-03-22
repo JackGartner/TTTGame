@@ -10,7 +10,7 @@ Maintainers
 
 INTRODUCTION
 
--Welcome to my Tic Tac Toe game, this game includes; two player inputs, two-dimensional board representation, win, cheat, and gamestate detection. A debug mode
+-Welcome to my Tic Tac Toe game, this game includes; two player inputs, one-dimensional board representation, win, cheat, and gamestate detection. A debug mode
 is also available for use
 
 -report bugs to - 204547@students.wyoarea.org
