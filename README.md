@@ -17,8 +17,8 @@ is also available for use
 
 REQUIREMENTS
 
--There are no requirements to run this module
--No packages are needed to be installed
+-There are no requirements to run this module  
+-No packages are needed to be installed  
 
 EXECUTION
 
@@ -26,9 +26,9 @@ EXECUTION
 
 CONFIGURATION
 
--main.py holds the main code
--gameFunctions.py contains game functions mainly consisting of detection
--ioFunctions contains integer input detect and error message
+-main.py holds the main code  
+-gameFunctions.py contains game functions mainly consisting of detection  
+-ioFunctions contains integer input detect and error message  
 
 MAINTAINERS
 
