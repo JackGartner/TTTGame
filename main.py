@@ -49,52 +49,74 @@ def main():
   
   while gameInPlay:
 
-  
+    if debug:
+      print("debugging....")
+      print(a)
+      print("turn # " + str(numTurns))  
 
     print("in play")
 
 
     numTurns += 1
 
-    if debug:
-      print("debugging....")
-      print(a)
-      print("turn # " + str(numTurns))
+    userInput = (ioFunctions.getIntegerInput(prompt))  
 
-    userInput = ioFunctions.getIntegerInput(prompt)
-    # user wants to exit     
-    if userInput == SENTINEL:
-      break
-    elif not (userInput > 0 and userInput < 10):
-      print("invalid input " + str(userInput))
+    if numTurns % 2 == 1:
+      xTurn = True
+      while xTurn:
+        if userInput == SENTINEL:
+          break
+        elif not (userInput > 0 and userInput < 10):
+          print("invalid input " + str(userInput))
+          break
+        elif not (a[userInput - 1] == "0"):
+          print('this space is taken, turn lost')
+          break
+        elif xTurn == True:
+          print("processing move by x")
+          a[userInput - 1] = "x"
+          print(a[:3])
+          print(a[3:6])
+          print(a[6:]) 
+          break
     else:
-      print("processing move")
+      oTurn = True
+      while oTurn:
+        if userInput == SENTINEL:
+          break
+        elif not (userInput > 0 and userInput < 10):
+          print("invalid input " + str(userInput))
+          break
+        elif not a[userInput - 1] == "0":
+          print('this space is taken, turn lost')
+          break
+        else:
+          print("processing move by o")
+          a[userInput - 1] = "o"
+          print(a[:3])
+          print(a[3:6])
+          print(a[6:]) 
+          break
+            
       
-      if numTurns % 2 == 1:
-        a[userInput - 1] = "x"
-      else:
-        a[userInput - 1] = "o"
 
-      if gameFunctions.isThereAWinInAnyRow(a) == True:
-        print("there is a winner in a row")
-        break
-      if gameFunctions.isThereAWinInAnyColumn(a) == True:
-        print("there is a winner in a column")
-        break
-      if gameFunctions.isThereAWinInAnyDiagonal(a) == True:
-        print("there is a winner in a diagonal")
-        break
-      if gameFunctions.isThereADraw(a) == True:
-        print("there is a Draw")
-        break
-      if gameFunctions.isValidGameState(a) == False:
-        print("Invalid Game State")
-        break
-      else:
-        print(a[:3])
-        print(a[3:6])
-        print(a[6:])       
-        print("there is not a winner")
+    if gameFunctions.isThereAWinInAnyRow(a) == True:
+      print("there is a winner in a row")
+      break
+    if gameFunctions.isThereAWinInAnyColumn(a) == True:
+      print("there is a winner in a column")
+      break
+    if gameFunctions.isThereAWinInAnyDiagonal(a) == True:
+      print("there is a winner in a diagonal")
+      break
+    if gameFunctions.isThereADraw(a) == True:
+      print("there is a Draw")
+      break
+    if gameFunctions.isValidGameState(a) == False:
+      print("Invalid Game State")
+      break
+    else:     
+      print("there is not a winner")
 
 
   print("goodbye, game is over")
